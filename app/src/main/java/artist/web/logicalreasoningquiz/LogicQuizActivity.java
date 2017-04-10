@@ -23,7 +23,7 @@ public class LogicQuizActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String name= intent.getStringExtra(USER_NAME);
-        user_name.setText(getString(R.string.welcome_user,name));
+        user_name.setText(name);
 
     }
 
@@ -54,4 +54,17 @@ public class LogicQuizActivity extends AppCompatActivity {
         startActivity(analogyIntent);
 
     }
+
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(USER_NAME, user_name.getText().toString());
+    }
+
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+
+        user_name = (TextView)findViewById(R.id.hello_user);
+        user_name.setText(savedInstanceState.getString(USER_NAME));
+
+    }
+
 }
