@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/number_headerIcon"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/header_imageHeight"
+                android:contentDescription="@string/category2"
+                android:scaleType="fitXY"
+                android:src="@drawable/analogies" />
+
+            <TextView
+                android:id="@+id/hello_user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/number_headerIcon"
+                android:background="@color/hello_user_bg"
+                android:padding="@dimen/hello_padding"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="@dimen/hello_text_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/hello_user"
+                android:background="@color/score_timingbg"
+                android:padding="@dimen/score_text_padding"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="@dimen/score_text_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/timing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/hello_user"
+                android:layout_marginRight="@dimen/time_text_marginR"
+                android:padding="@dimen/score_text_padding"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="@dimen/score_text_size"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout style="@style/questionBox">
+
+                <TextView
+                    android:id="@+id/question1"
+                    style="@style/TextStyle"
+                    android:text="@string/analogy_question1" />
+
+                <RadioGroup style="@style/RadioGroup">
+
+                    <RadioButton
+                        style="@style/RadioButton"
+                        android:text="@string/analogy_ques1_opt1" />
+
+                    <RadioButton
+                        style="@style/RadioButton"
+                        android:text="@string/analogy_ques1_opt2" />
+
+                    <RadioButton
+                        style="@style/RadioButton"
+                        android:text="@string/analogy_ques1_opt3" />
+
+                    <RadioButton
+                        android:id="@+id/Q1_opt4"
+                        style="@style/RadioButton"
+                        android:text="@string/analogy_ques1_opt4" />
+
+                </RadioGroup>
+
+
+            </LinearLayout>
+            <LinearLayout style="@style/questionBox">
+
+                <TextView
+                    android:id="@+id/question2"
+                    style="@style/TextStyle"
+                    android:text="@string/analogy_question2" />
+
+                <RadioGroup style="@style/RadioGroup">
+
+                    <RadioButton
+                        style="@style/RadioButton"
+                        android:text="@string/analogy_ques2_opt1" />
+
+                    <RadioButton
+                        style="@style/RadioButton"
+                        android:text="@string/analogy_ques2_opt2" />
+
+                    <RadioButton
+                        style="@style/RadioButton"
+                        android:text="@string/analogy_ques2_opt3" />
+
+                    <RadioButton
+                        android:id="@+id/Q2_opt4"
+                        style="@style/RadioButton"
+                        android:text="@string/analogy_ques2_opt4" />
+
+
+                </RadioGroup>
+
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/questionBox">
+
+                <TextView
+                    android:id="@+id/question3"
+                    style="@style/TextStyle"
+                    android:text="@string/analogy_question3" />
+
+                <RadioGroup style="@style/RadioGroup">
+
+                    <RadioButton
+                        style="@style/RadioButton"
+                        android:text="@string/analogy_ques3_opt1" />
+
+                    <RadioButton
+
+                        style="@style/RadioButton"
+                        android:text="@string/analogy_ques3_opt2" />
+
+                    <RadioButton
+                        style="@style/RadioButton"
+                        android:text="@string/analogy_ques3_opt3" />
+
+                    <RadioButton
+                        style="@style/RadioButton"
+                        android:text="@string/analogy_ques3_opt4" />
+                    <RadioButton
+                        android:id="@+id/Q3_opt5"
+                        style="@style/RadioButton"
+                        android:text="@string/analogy_ques3_opt5" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal">
+
+            <ImageButton
+                android:layout_width="@dimen/submit_width"
+                android:layout_height="@dimen/submit_height"
+                android:contentDescription="@string/submit"
+                android:src="@drawable/submit"
+                android:onClick="showScore"
+                android:scaleType="fitXY"
+                android:background="@color/submitbg"
+                android:layout_marginTop="@dimen/category_marginTop"
+                android:layout_centerHorizontal="true"/>
+
+
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>

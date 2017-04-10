@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name ="welcome_text_color">#ad1457</color>
+    <color name="header_imageBG">#283593</color>
+    <color name="start_quiz">#fdd835</color>
+    <color name="select_category_bg_color">#ffca28</color>
+    <color name="select_category_text_color">#fff</color>
+    <color name="white">#fff</color>
+    <color name="hello_user_bg">#ffb300</color>
+    <color name="score_timingbg">#ffa000</color>
+    <color name="grey">#757575</color>
+    <color name="submitbg">#fffde7</color>
+</resources>

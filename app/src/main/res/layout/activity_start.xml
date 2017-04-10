@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg1"
+    tools:context="artist.web.logicalreasoningquiz.StartActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/header_imageHeight"
+        android:src="@drawable/logical_reasoning"
+        android:scaleType="fitXY"
+        android:background="@color/header_imageBG"/>
+
+    <EditText
+        android:id="@+id/your_name"
+        android:layout_width="@dimen/your_name_width"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:hint="@string/your_name"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/your_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/start_buttonMTB"
+        android:layout_marginBottom="@dimen/start_buttonMTB"
+        android:text="@string/start_quiz"
+        android:textSize="@dimen/start_quizSize"
+        android:padding="@dimen/start_quizPadding"
+        android:onClick="startQuiz"
+        android:background="@color/start_quiz"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/footer1"
+        android:layout_alignParentBottom="true"
+        android:scaleType="fitXY"
+        />
+
+
+</RelativeLayout>

@@ -1,0 +1,65 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="RadioButton" parent="AppTheme">
+        <item name="android:textSize">@dimen/radiobutton_text_size</item>
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/radiogroup_marginB</item>
+    </style>
+
+    <style name="WrapContentStyle" parent="AppTheme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="RadioGroup" parent="AppTheme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_marginLeft">@dimen/radiogroup_marginL</item>
+    </style>
+
+    <style name="questionBox" parent="AppTheme">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_margin">@dimen/question_layout_margin</item>
+    </style>
+
+    <style name="TextStyle" parent="AppTheme">
+        <item name="android:textSize">@dimen/question_text_size</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:padding">@dimen/question_padding</item>
+        <item name="android:layout_margin">@dimen/question_margin</item>
+    </style>
+
+    <style name="CheckBoxStyle" parent="AppTheme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:layout_marginLeft">@dimen/checkbox_marginL</item>
+        <item name="android:textSize">@dimen/checkbox_text_size</item>
+
+    </style>
+
+    <style name="EditTextStyle" parent="AppTheme">
+        <item name="android:layout_width">@dimen/editText_width</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:inputType">text</item>
+        <item name="android:layout_marginLeft">@dimen/editText_marginL</item>
+        <item name="android:layout_marginBottom">@dimen/editText_marginB</item>
+
+    </style>
+
+</resources>

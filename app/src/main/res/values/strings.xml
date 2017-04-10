@@ -1,0 +1,75 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">LogicalReasoningQuiz</string>
+    <string name="welcome_message">Welcome to Logical Reasoning Quiz</string>
+    <string name="your_name">Name</string>
+    <string name="start_quiz">Start Quiz</string>
+    <string name="onStart">onStart</string>
+    <string name="question_one"></string>
+    <string name="select_category">Select Your Category</string>
+    <string name="welcome_user"><xliff:g id="user_name" example="Henna">%s</xliff:g></string>
+    <string name="category1">Numbers Category</string>
+    <string name="category2">Analogies Category</string>
+    <string name="category3">Verbal Reasoning Category</string>
+    <string name="category4">Picto Word Category</string>
+    <string name="submit">Submit Score</string>
+    <string name="score_text">Score : <xliff:g id="score" example="5">%d</xliff:g></string>
+    <string name="timing">Time : <xliff:g id="time" example="60">%s</xliff:g></string>
+    <string name="number_question1">Q1. Look at the series: 2, 1, (1/2), (1/4), .. What number/s should come next ?</string>
+    <string name="number_ques1_opt1">(1/3)</string>
+    <string name="number_ques1_opt2">(1/8)</string>
+    <string name="number_ques1_opt3">(2/8)</string>
+    <string name="number_ques1_opt4">(4/32)</string>
+    <string name="number_question1_answer">(1/8)</string>
+    <string name="number_question2">Q2. What number/s should come next in series: 7, 10, 8, 11, 9, 12,...?</string>
+    <string name="number_ques2_opt1">7</string>
+    <string name="number_ques2_opt2">10</string>
+    <string name="number_ques2_opt3">12</string>
+    <string name="number_ques2_opt4">(20/2)</string>
+    <string name="number_question2_answer">10</string>
+    <string name="number_question3">Q3. What number/s should fill the blank: 8, 43, 11, 41, __, 39, 17 ?</string>
+    <string name="number_ques3_opt1">8</string>
+    <string name="number_ques3_opt2">14</string>
+    <string name="number_ques3_opt3">(43 - 29)</string>
+    <string name="number_ques3_opt4">44</string>
+    <string name="number_question3_answer">14</string>
+    <string name="analogy_question1">Q1. Odometer is to mileage as compass is to </string>
+    <string name="analogy_ques1_opt1">Speed</string>
+    <string name="analogy_ques1_opt2">hiking</string>
+    <string name="analogy_ques1_opt3">needle</string>
+    <string name="analogy_ques1_opt4">direction</string>
+    <string name="analogy_question2">Q2. Marathon is to race as hibernation is to </string>
+    <string name="analogy_ques2_opt1">Winter</string>
+    <string name="analogy_ques2_opt2">Bear</string>
+    <string name="analogy_ques2_opt3">Dream</string>
+    <string name="analogy_ques2_opt4">Sleep</string>
+    <string name="analogy_ques2_answer">Sleep</string>
+    <string name="analogy_question3">Q3. Find a similar pair to  BINDING : BOOK</string>
+    <string name="analogy_ques3_opt1">criminal : gang</string>
+    <string name="analogy_ques3_opt2">display : museum</string>
+    <string name="analogy_ques3_opt3">artist : carpenter</string>
+    <string name="analogy_ques3_opt4">nail : hammer</string>
+    <string name="analogy_ques3_opt5">frame : picture</string>
+    <string name="verbal_question1">Q1. Vincent has a paper route. Each morning, he delivers 37 newspapers to customers
+        in his neighborhood. It takes Vincent 50 minutes to deliver all the papers. If Vincent is sick or has other plans,
+        his friend Thomas, who lives on the same street, will sometimes deliver the papers for him.</string>
+    <string name="verbal_ques1_opt1">Vincent and Thomas live in the same neighborhood</string>
+    <string name="verbal_ques1_opt2">It takes Thomas more than 50 minutes to deliver the papers</string>
+    <string name="verbal_ques1_opt3">It is dark outside when Vincent begins his deliveries</string>
+    <string name="verbal_ques1_opt4">Thomas would like to have his own paper route</string>
+    <string name="verbal_question2">Q2. The Pacific yew is an evergreen tree that grows in the Pacific Northwest. The Pacific
+        yew has a fleshy, poisonous fruit. Recently, taxol, a substance found in the bark of the Pacific yew, was discovered to
+        be a promising new anticancer drug.</string>
+    <string name="verbal_ques2_opt1">Taxol is poisonous when taken by healthy people</string>
+    <string name="verbal_ques2_opt2">Taxol has cured people from various diseases</string>
+    <string name="verbal_ques2_opt3">People should not eat the fruit of the Pacific yew</string>
+    <string name="verbal_ques2_opt4">The Pacific yew was considered worthless until taxol was discovered.</string>
+    <string name="verbal_question3">Q3. On weekends, Mr. Sanchez spends many hours working in his vegetable and flower gardens.
+        Mrs. Sanchez spends her free time reading and listening to classical music. Both Mr. Sanchez and Mrs. Sanchez like to cook.</string>
+    <string name="verbal_ques3_opt1">Mr. Sanchez enjoys planting and growing vegetables</string>
+    <string name="verbal_ques3_opt2">Mr. Sanchez does not like classical music</string>
+    <string name="verbal_ques3_opt3">Mrs. Sanchez cooks the vegetables that Mr. Sanchez grows</string>
+    <string name="verbal_ques3_opt4">Mrs. Sanchez enjoys reading nineteenth century novels</string>
+    <string name="pictoword_question">Guess the word formed when you add these images </string>
+
+
+</resources>

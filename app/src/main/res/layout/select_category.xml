@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg1">
+
+<RelativeLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <TextView
+        android:id="@+id/hello_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:background="@color/hello_user_bg"
+        android:textColor="@color/white"
+        android:textSize="@dimen/hello_text_size"
+        android:padding="@dimen/hello_padding"
+        android:textStyle="bold"/>
+
+
+    <TextView
+        android:id="@+id/category_text"
+        android:layout_below="@id/hello_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/select_category"
+        android:padding="@dimen/select_category_padding"
+        android:textSize="@dimen/select_category_text_size"
+        android:textColor="@color/select_category_text_color"
+        android:background="@color/select_category_bg_color"
+        android:textStyle="bold"
+        android:layout_marginBottom="@dimen/select_text_marginb"
+        />
+
+    <ImageButton
+        android:id="@+id/category1"
+        android:layout_width="@dimen/category_width"
+        android:layout_height="@dimen/category_height"
+        android:src="@drawable/numbers"
+        android:layout_below="@id/category_text"
+        android:scaleType="fitXY"
+        android:onClick="startNumberQuiz"
+        android:background="@color/white"
+        android:contentDescription="@string/category1"
+        android:layout_marginTop="@dimen/category_marginTop"
+        android:layout_centerHorizontal="true"/>
+
+    <ImageButton
+        android:id="@+id/category2"
+        android:layout_width="@dimen/category_width"
+        android:layout_height="@dimen/category_height"
+        android:layout_below="@id/category1"
+        android:contentDescription="@string/category2"
+        android:src="@drawable/analogies"
+        android:scaleType="fitXY"
+        android:onClick="startAnalogyQuiz"
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/category_marginTop"
+        android:layout_centerHorizontal="true"/>
+
+    <ImageButton
+        android:id="@+id/category3"
+        android:layout_width="@dimen/category_width"
+        android:layout_height="@dimen/category_height"
+        android:layout_below="@id/category2"
+        android:contentDescription="@string/category3"
+        android:src="@drawable/verbal"
+        android:onClick="startVerbalQuiz"
+        android:scaleType="fitXY"
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/category_marginTop"
+        android:layout_centerHorizontal="true"/>
+
+    <ImageButton
+        android:id="@+id/category4"
+        android:layout_width="@dimen/category_width"
+        android:layout_height="@dimen/category_height"
+        android:layout_below="@id/category3"
+        android:contentDescription="@string/category4"
+        android:src="@drawable/pictoword"
+        android:onClick="startPictoQuiz"
+        android:scaleType="fitXY"
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/category_marginTop"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>
+
+</ScrollView>
