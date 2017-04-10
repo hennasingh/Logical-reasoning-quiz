@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import static artist.web.logicalreasoningquiz.LogicQuizActivity.USER_NAME;
+import static artist.web.logicalreasoningquiz.VerbalQuiz.TIMER;
 
 /**
  * Created by User on 4/9/2017.
@@ -124,6 +125,21 @@ public class NumberQuiz extends AppCompatActivity {
              Intent restartQuiz = new Intent(this,LogicQuizActivity.class);
              startActivity(restartQuiz);
          }
+
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(USER_NAME, user_name.getText().toString());
+        outState.putString(TIMER, timer.getText().toString());
+    }
+
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+
+        user_name = (TextView)findViewById(R.id.hello_user);
+        timer = (TextView)findViewById(R.id.timing);
+        user_name.setText(savedInstanceState.getString(USER_NAME));
+        timer.setText(savedInstanceState.getString(TIMER));
+
+    }
 
 
 }

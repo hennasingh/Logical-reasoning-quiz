@@ -20,6 +20,7 @@ public class VerbalQuiz extends AppCompatActivity {
     TextView timer;
     String name;
     RadioButton ques1_opt1, ques2_opt3, ques3_opt1;
+    public static final String TIMER = "Timing";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,5 +95,20 @@ public class VerbalQuiz extends AppCompatActivity {
     private void restart(){
         Intent restartQuiz = new Intent(this,LogicQuizActivity.class);
         startActivity(restartQuiz);
+    }
+
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(USER_NAME, user_name.getText().toString());
+        outState.putString(TIMER, timer.getText().toString());
+    }
+
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+
+        user_name = (TextView)findViewById(R.id.hello_user);
+        timer = (TextView)findViewById(R.id.timing);
+        user_name.setText(savedInstanceState.getString(USER_NAME));
+        timer.setText(savedInstanceState.getString(TIMER));
+
     }
 }
