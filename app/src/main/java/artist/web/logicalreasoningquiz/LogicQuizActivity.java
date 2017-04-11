@@ -1,10 +1,13 @@
 package artist.web.logicalreasoningquiz;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
+
+import static artist.web.logicalreasoningquiz.NumberQuiz.MY_PREFS_FILE;
 
 
 /**
@@ -21,9 +24,9 @@ public class LogicQuizActivity extends AppCompatActivity {
         setContentView(R.layout.select_category);
         user_name = (TextView)findViewById(R.id.hello_user);
 
-        Intent intent = getIntent();
-        String name= intent.getStringExtra(USER_NAME);
-        user_name.setText(name);
+        SharedPreferences prefs = getSharedPreferences(MY_PREFS_FILE,MODE_PRIVATE);
+        String nameU= prefs.getString(USER_NAME,"No Name Defined");
+        user_name.setText(nameU);
 
     }
 
@@ -57,14 +60,10 @@ public class LogicQuizActivity extends AppCompatActivity {
 
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putString(USER_NAME, user_name.getText().toString());
-    }
 
-    public void onRestoreInstanceState(Bundle savedInstanceState) {
-
-        user_name = (TextView)findViewById(R.id.hello_user);
-        user_name.setText(savedInstanceState.getString(USER_NAME));
-
+        SharedPreferences.Editor editor = getSharedPreferences(MY_PREFS_FILE,MODE_PRIVATE).edit();
+        editor.putString(USER_NAME, user_name.getText().toString());
+         editor.commit();
     }
 
 }

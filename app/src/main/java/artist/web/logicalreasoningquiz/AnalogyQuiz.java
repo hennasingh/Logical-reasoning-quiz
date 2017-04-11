@@ -1,6 +1,7 @@
 package artist.web.logicalreasoningquiz;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import static artist.web.logicalreasoningquiz.LogicQuizActivity.USER_NAME;
+import static artist.web.logicalreasoningquiz.NumberQuiz.MY_PREFS_FILE;
 import static artist.web.logicalreasoningquiz.VerbalQuiz.TIMER;
 
 /**
@@ -33,8 +35,8 @@ public class AnalogyQuiz extends AppCompatActivity {
         ques3_opt5 = (RadioButton)findViewById(R.id.Q3_opt5);
         ques2_opt4 = (RadioButton)findViewById(R.id.Q2_opt4);
 
-        Intent intent = getIntent();
-        name= intent.getStringExtra(USER_NAME);
+        SharedPreferences prefs = getSharedPreferences(MY_PREFS_FILE,MODE_PRIVATE);
+        name= prefs.getString(USER_NAME,"No Name Defined");
         user_name.setText(name);
 
 
@@ -99,17 +101,11 @@ public class AnalogyQuiz extends AppCompatActivity {
 
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putString(USER_NAME, user_name.getText().toString());
-        outState.putString(TIMER, timer.getText().toString());
-    }
 
-    public void onRestoreInstanceState(Bundle savedInstanceState) {
-
-        user_name = (TextView)findViewById(R.id.hello_user);
-        timer = (TextView)findViewById(R.id.timing);
-        user_name.setText(savedInstanceState.getString(USER_NAME));
-        timer.setText(savedInstanceState.getString(TIMER));
-
+        SharedPreferences.Editor editor = getSharedPreferences(MY_PREFS_FILE,MODE_PRIVATE).edit();
+        editor.putString(USER_NAME, user_name.getText().toString());
+        editor.putString(TIMER, timer.getText().toString());
+        editor.commit();
     }
 
 }

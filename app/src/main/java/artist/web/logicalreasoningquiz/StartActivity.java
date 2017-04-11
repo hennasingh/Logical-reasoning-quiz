@@ -1,11 +1,15 @@
 package artist.web.logicalreasoningquiz;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import static artist.web.logicalreasoningquiz.LogicQuizActivity.USER_NAME;
+import static artist.web.logicalreasoningquiz.NumberQuiz.MY_PREFS_FILE;
 
 public class StartActivity extends AppCompatActivity {
     EditText your_name;
@@ -31,10 +35,18 @@ public class StartActivity extends AppCompatActivity {
                     Toast.LENGTH_SHORT).show();
         }
         Intent quiz_window= new Intent(this,LogicQuizActivity.class);
-        quiz_window.putExtra(LogicQuizActivity.USER_NAME,user_name);
+        quiz_window.putExtra(USER_NAME,user_name);
 
         startActivity(quiz_window);
 
+    }
+
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        SharedPreferences.Editor editor = getSharedPreferences(MY_PREFS_FILE,MODE_PRIVATE).edit();
+        editor.putString(USER_NAME, your_name.getText().toString());
+        editor.commit();
     }
 
   }

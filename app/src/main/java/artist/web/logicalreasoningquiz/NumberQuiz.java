@@ -1,6 +1,7 @@
 package artist.web.logicalreasoningquiz;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
@@ -17,6 +18,8 @@ import static artist.web.logicalreasoningquiz.VerbalQuiz.TIMER;
  */
 
 public class NumberQuiz extends AppCompatActivity {
+
+    public static final String MY_PREFS_FILE="MyPrefsFile";
 
     TextView user_name;
     TextView timer;
@@ -49,10 +52,9 @@ public class NumberQuiz extends AppCompatActivity {
         ques3_opt4 = (CheckBox)findViewById(R.id.Q3_opt4);
 
 
-
-        Intent intent = getIntent();
-         name= intent.getStringExtra(USER_NAME);
-        user_name.setText(name);
+        SharedPreferences prefs = getSharedPreferences(MY_PREFS_FILE,MODE_PRIVATE);
+        String nameU= prefs.getString(USER_NAME,"No Name Defined");
+        user_name.setText(nameU);
 
 
         CountDownTimer countDownTimer = new CountDownTimer(60 * 1000, 1000) {
@@ -128,18 +130,13 @@ public class NumberQuiz extends AppCompatActivity {
 
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putString(USER_NAME, user_name.getText().toString());
-        outState.putString(TIMER, timer.getText().toString());
+
+        SharedPreferences.Editor editor = getSharedPreferences(MY_PREFS_FILE,MODE_PRIVATE).edit();
+        editor.putString(USER_NAME, user_name.getText().toString());
+        editor.putString(TIMER, timer.getText().toString());
+        editor.commit();
     }
 
-    public void onRestoreInstanceState(Bundle savedInstanceState) {
-
-        user_name = (TextView)findViewById(R.id.hello_user);
-        timer = (TextView)findViewById(R.id.timing);
-        user_name.setText(savedInstanceState.getString(USER_NAME));
-        timer.setText(savedInstanceState.getString(TIMER));
-
-    }
 
 
 }
