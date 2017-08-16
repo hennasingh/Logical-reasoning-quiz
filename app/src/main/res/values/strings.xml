@@ -70,6 +70,7 @@
     <string name="verbal_ques3_opt3">Mrs. Sanchez cooks the vegetables that Mr. Sanchez grows</string>
     <string name="verbal_ques3_opt4">Mrs. Sanchez enjoys reading nineteenth century novels</string>
     <string name="pictoword_question">Guess the word formed when you add these images </string>
+    <string name="time_out">TIME OUT</string>
 
 
 </resources>

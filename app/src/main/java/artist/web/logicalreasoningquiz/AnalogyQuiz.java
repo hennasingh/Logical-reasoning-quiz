@@ -48,8 +48,8 @@ public class AnalogyQuiz extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                timer.setText("TIME OUT");
-                Toast.makeText(AnalogyQuiz.this,"Time's Up!!" +"\n"+" Try Again!!", Toast.LENGTH_LONG);
+                timer.setText(R.string.time_out);
+                Toast.makeText(AnalogyQuiz.this,"Time's Up!!" +"\n"+" Try Again!!", Toast.LENGTH_LONG).show();
                 restart();
 
             }
@@ -96,6 +96,7 @@ public class AnalogyQuiz extends AppCompatActivity {
 
     private void restart(){
         Intent restartQuiz = new Intent(this,LogicQuizActivity.class);
+        restartQuiz.putExtra(USER_NAME,name);
         startActivity(restartQuiz);
     }
 
@@ -105,7 +106,7 @@ public class AnalogyQuiz extends AppCompatActivity {
         SharedPreferences.Editor editor = getSharedPreferences(MY_PREFS_FILE,MODE_PRIVATE).edit();
         editor.putString(USER_NAME, user_name.getText().toString());
         editor.putString(TIMER, timer.getText().toString());
-        editor.commit();
+        editor.apply();
     }
 
 }

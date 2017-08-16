@@ -1,6 +1,7 @@
 package artist.web.logicalreasoningquiz;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +11,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import static artist.web.logicalreasoningquiz.LogicQuizActivity.USER_NAME;
+import static artist.web.logicalreasoningquiz.NumberQuiz.MY_PREFS_FILE;
+import static artist.web.logicalreasoningquiz.VerbalQuiz.TIMER;
 
 /**
  * Created by User on 4/9/2017.
@@ -35,10 +38,9 @@ public class PictoQuiz extends AppCompatActivity {
         ques5 =(EditText)findViewById(R.id.ques5);
 
 
-        Intent intent = getIntent();
-        name= intent.getStringExtra(USER_NAME);
+        SharedPreferences prefs = getSharedPreferences(MY_PREFS_FILE,MODE_PRIVATE);
+        name= prefs.getString(USER_NAME,"No Name Defined");
         user_name.setText(name);
-
 
         CountDownTimer countDownTimer = new CountDownTimer(60 * 1000, 1000) {
             @Override
@@ -48,8 +50,8 @@ public class PictoQuiz extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                timer.setText("TIME OUT");
-                Toast.makeText(PictoQuiz.this,"Time's Up!!" +"\n"+" Try Again!!", Toast.LENGTH_LONG);
+                timer.setText(R.string.time_out);
+                Toast.makeText(PictoQuiz.this,"Time's Up!!" +"\n"+" Try Again!!", Toast.LENGTH_LONG).show();
                 restart();
 
             }
@@ -105,6 +107,16 @@ public class PictoQuiz extends AppCompatActivity {
 
     private void restart(){
         Intent restartQuiz = new Intent(this,LogicQuizActivity.class);
+        restartQuiz.putExtra(USER_NAME,name);
         startActivity(restartQuiz);
+    }
+
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        SharedPreferences.Editor editor = getSharedPreferences(MY_PREFS_FILE,MODE_PRIVATE).edit();
+        editor.putString(USER_NAME, user_name.getText().toString());
+        editor.putString(TIMER, timer.getText().toString());
+        editor.apply();
     }
 }

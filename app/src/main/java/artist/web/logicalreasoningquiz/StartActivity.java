@@ -31,13 +31,14 @@ public class StartActivity extends AppCompatActivity {
                     Toast.LENGTH_LONG).show();
             return;
         } else {
-            Toast.makeText(this, "Hello, " + user_name + "!" + "\n"+getString(R.string.welcome_message),
+            Toast.makeText(this, "Hello, " + user_name + "!" + "\n" + getString(R.string.welcome_message),
                     Toast.LENGTH_SHORT).show();
-        }
-        Intent quiz_window= new Intent(this,LogicQuizActivity.class);
-        quiz_window.putExtra(USER_NAME,user_name);
 
-        startActivity(quiz_window);
+            Intent quiz_window = new Intent(this, LogicQuizActivity.class);
+            quiz_window.putExtra(USER_NAME, user_name);
+
+            startActivity(quiz_window);
+        }
 
     }
 
@@ -45,8 +46,8 @@ public class StartActivity extends AppCompatActivity {
         super.onSaveInstanceState(outState);
 
         SharedPreferences.Editor editor = getSharedPreferences(MY_PREFS_FILE,MODE_PRIVATE).edit();
-        editor.putString(USER_NAME, your_name.getText().toString());
-        editor.commit();
+        editor.putString(USER_NAME, user_name);
+        editor.apply();
     }
 
   }
