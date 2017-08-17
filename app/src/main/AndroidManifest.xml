@@ -19,7 +19,9 @@
         <activity android:name=".LogicQuizActivity"></activity>
         <activity android:name=".NumberQuiz"></activity>
         <activity android:name=".VerbalQuiz"></activity>
-        <activity android:name=".AnalogyQuiz"></activity>
+        <activity android:name=".AnalogyQuiz"
+            android:configChanges="orientation|screenSize|keyboardHidden">
+        </activity>
         <activity android:name=".PictoQuiz"></activity>
 
     </application>

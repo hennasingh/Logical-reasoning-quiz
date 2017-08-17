@@ -29,6 +29,7 @@ public class NumberQuiz extends AppCompatActivity {
     CheckBox ques2_opt1, ques2_opt2, ques2_opt3, ques2_opt4;
     CheckBox ques3_opt1, ques3_opt2, ques3_opt3, ques3_opt4;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

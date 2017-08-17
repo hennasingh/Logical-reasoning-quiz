@@ -1,0 +1,20 @@
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal">
+
+        <ImageButton
+            android:layout_width="@dimen/submit_width"
+            android:layout_height="@dimen/submit_height"
+            android:contentDescription="@string/submit"
+            android:src="@drawable/submit"
+            android:onClick="showScore"
+            android:scaleType="fitXY"
+            android:background="@color/submitbg"
+            android:layout_marginTop="@dimen/category_marginTop"
+            android:layout_centerHorizontal="true"/>
+
+
+    </RelativeLayout>
+

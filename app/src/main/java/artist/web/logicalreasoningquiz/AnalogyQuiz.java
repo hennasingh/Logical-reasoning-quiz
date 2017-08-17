@@ -24,6 +24,7 @@ public class AnalogyQuiz extends AppCompatActivity {
     String name;
     RadioButton ques1_opt4, ques2_opt4, ques3_opt5;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
