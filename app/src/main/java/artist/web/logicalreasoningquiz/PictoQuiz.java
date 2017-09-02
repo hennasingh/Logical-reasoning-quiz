@@ -2,7 +2,6 @@ package artist.web.logicalreasoningquiz;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
@@ -31,8 +30,10 @@ public class PictoQuiz extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = DataBindingUtil.setContentView(this,R.layout.picto_quiz_start);
-        user_name = (TextView)findViewById(R.id.hello_user);
+        binding = PictoQuizStartBinding.inflate(getLayoutInflater());
+
+        //binding = DataBindingUtil.setContentView(this,R.layout.picto_quiz_start);
+        //user_name = (TextView)findViewById(R.id.hello_user);
         timer = (TextView)findViewById(R.id.timing);
 
         //ques1 =(EditText)findViewById(R.id.ques1);
@@ -44,7 +45,7 @@ public class PictoQuiz extends AppCompatActivity {
 
         SharedPreferences prefs = getSharedPreferences(MY_PREFS_FILE,MODE_PRIVATE);
         name= prefs.getString(USER_NAME,"No Name Defined");
-        user_name.setText(name);
+        //binding.titlebar.hello_user.setText(name);
 
         CountDownTimer countDownTimer = new CountDownTimer(60 * 1000, 1000) {
             @Override
