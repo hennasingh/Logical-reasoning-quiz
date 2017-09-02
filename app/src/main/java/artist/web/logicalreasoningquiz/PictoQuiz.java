@@ -8,9 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import artist.web.logicalreasoningquiz.databinding.PictoQuizStartBinding;
-
 import static artist.web.logicalreasoningquiz.LogicQuizActivity.USER_NAME;
 import static artist.web.logicalreasoningquiz.NumberQuiz.MY_PREFS_FILE;
 import static artist.web.logicalreasoningquiz.VerbalQuiz.TIMER;
@@ -34,7 +32,7 @@ public class PictoQuiz extends AppCompatActivity {
 
         //binding = DataBindingUtil.setContentView(this,R.layout.picto_quiz_start);
         //user_name = (TextView)findViewById(R.id.hello_user);
-        timer = (TextView)findViewById(R.id.timing);
+        //timer = (TextView)findViewById(R.id.timing);
 
         //ques1 =(EditText)findViewById(R.id.ques1);
         //ques2 =(EditText)findViewById(R.id.ques2);
@@ -45,17 +43,17 @@ public class PictoQuiz extends AppCompatActivity {
 
         SharedPreferences prefs = getSharedPreferences(MY_PREFS_FILE,MODE_PRIVATE);
         name= prefs.getString(USER_NAME,"No Name Defined");
-        //binding.titlebar.hello_user.setText(name);
+        binding.titlebar.helloUser.setText(name);
 
         CountDownTimer countDownTimer = new CountDownTimer(60 * 1000, 1000) {
             @Override
             public void onTick(long l) {
-                timer.setText("Timer: " +l / 1000 + " " + "sec");
+                binding.titlebar.timing.setText("Timer: " +l / 1000 + " " + "sec");
             }
 
             @Override
             public void onFinish() {
-                timer.setText(R.string.time_out);
+                binding.titlebar.timing.setText(R.string.time_out);
                 Toast.makeText(PictoQuiz.this,"Time's Up!!" +"\n"+" Try Again!!", Toast.LENGTH_LONG).show();
                 restart();
 
@@ -105,9 +103,7 @@ public class PictoQuiz extends AppCompatActivity {
         else{
             Toast.makeText(this," You did well " +name+ " You scored "+ score,Toast.LENGTH_LONG).show();
         }
-
         restart();
-
     }
 
     private void restart(){
@@ -120,8 +116,8 @@ public class PictoQuiz extends AppCompatActivity {
         super.onSaveInstanceState(outState);
 
         SharedPreferences.Editor editor = getSharedPreferences(MY_PREFS_FILE,MODE_PRIVATE).edit();
-        editor.putString(USER_NAME, user_name.getText().toString());
-        editor.putString(TIMER, timer.getText().toString());
+        editor.putString(USER_NAME, binding.titlebar.helloUser.getText().toString());
+        editor.putString(TIMER, binding.titlebar.timing.getText().toString());
         editor.apply();
     }
 }
