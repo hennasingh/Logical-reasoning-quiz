@@ -5,10 +5,13 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import artist.web.logicalreasoningquiz.databinding.PictoQuizStartBinding;
+
 import static artist.web.logicalreasoningquiz.LogicQuizActivity.USER_NAME;
 import static artist.web.logicalreasoningquiz.NumberQuiz.MY_PREFS_FILE;
 import static artist.web.logicalreasoningquiz.VerbalQuiz.TIMER;
@@ -28,6 +31,7 @@ public class PictoQuiz extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.picto_quiz_start);
         binding = PictoQuizStartBinding.inflate(getLayoutInflater());
 
         //binding = DataBindingUtil.setContentView(this,R.layout.picto_quiz_start);
@@ -71,6 +75,8 @@ public class PictoQuiz extends AppCompatActivity {
         String thirdQues = binding.ques3.getText().toString().toLowerCase();
         String fourthQues = binding.ques4.getText().toString().toLowerCase();
         String fifthQues = binding.ques5.getText().toString().toLowerCase();
+
+        Log.v("Picto", firstQues);
 
         if(firstQues.equals("hotdog")){
             score+=5;
